@@ -32,7 +32,7 @@ public class App
 
         user.setName("Thomas");
         user.setLastName("Shelby");
-        requestEntity = new HttpEntity<>(user, headers);
+//        requestEntity = new HttpEntity<>(user, headers);
         String secondKey = communicado.putMethod(requestEntity);
         System.out.println(secondKey);
 
