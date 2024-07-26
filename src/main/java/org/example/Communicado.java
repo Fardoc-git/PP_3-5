@@ -21,7 +21,6 @@ public class Communicado {
 
     private final String URL = "http://94.198.50.185:7081/api/users";
 
-//    get
     public String getMethod(HttpEntity<User> requestEntity) {
         ResponseEntity<List> responseEntity = restTemplate.exchange(URL, HttpMethod.GET, null
                 , List.class);
@@ -33,21 +32,18 @@ public class Communicado {
         return responseEntity.getHeaders().getFirst("Set-Cookie");
     }
 
-//    post
     public String postMethod(HttpEntity<User> requestEntity) {
         ResponseEntity<String> responseEntity = restTemplate.exchange(URL, HttpMethod.POST, requestEntity, String.class);
 
         return responseEntity.getBody();
     }
 
-//    put
     public String putMethod(HttpEntity<User> requestEntity) {
         ResponseEntity<String> responseEntity = restTemplate.exchange(URL, HttpMethod.PUT, requestEntity, String.class);
 
         return responseEntity.getBody();
     }
 
-//    delete
     public String deleteMethod(HttpEntity<User> requestEntity) {
         ResponseEntity<String> responseEntity = restTemplate.exchange(URL + "/" + requestEntity.getBody().getId()
                 , HttpMethod.DELETE, requestEntity, String.class);
